@@ -1,0 +1,32 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "firebase": "^3.0.5",
+    "forever": "^0.15.1",
+    "fs": "0.0.2",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "jsonfile": "^2.3.1",
+    "node-wit": "1.0.0",
+    "promise": "^7.1.1",
+    "request": "^2.72.0",
+    "serve-static": "^1.10.2",
+    "wit-js": "0.0.1",
+    "yield": "latest",
+    "suspend": "latest",
+    "underscore": "latest",
+    "request-promise": "latest"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

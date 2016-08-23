@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<title>Authorization</title>
+</head>
+<body>
+<div class="header-wrapper">
+    <span>Please enter your credentials</span>
+	<div class="search-form">
+
+		<form id="auth" class="apisearch">
+		<input type="text" name="q" placeholder="username" autosave="Unity Reference"  class="inputbox" id="q">
+		<input type="password" name="q" placeholder="password" autosave="Unity Reference 2"  class="inputbox" id="q">
+		<input type="submit" class="submit">
+		</form>
+	</div>
+</div> 
+<style>
+body{
+    background: #eaeaea;
+}
+     .inputbox{width: 100%;
+    line-height: 40px;
+    font-size: 18px;
+    margin: 20px 0;
+    padding:0 10px;
+}
+.header-wrapper{    margin: 0 auto;
+    width: 500px;
+}
+.header-wrapper span{
+    font-size: 20px;
+    color: #222;
+}
+.submit{
+        font-weight: bold;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    margin: 0;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    padding: 0 13px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 13px;
+    color: #fff;
+    background-color: #287bbc;
+    border-color: #1b5480;
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF287BBC', endColorstr='#FF23639A');
+    background-image: -webkit-linear-gradient(top, #287bbc 0%,#23639a 100%);
+    background-image: -moz-linear-gradient(top, #287bbc 0%,#23639a 100%);
+    background-image: -o-linear-gradient(top, #287bbc 0%,#23639a 100%);
+    background-image: linear-gradient(top, #287bbc 0%,#23639a 100%);
+    white-space: nowrap;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    height: 27px;
+    line-height: 25px;
+    overflow: hidden;
+    width: 150px;
+    margin: 20px 0;
+}
+</style>
+<script>
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+var redirect_uri = getParameterByName('redirect_uri');
+var account_linking_token = getParameterByName('account_linking_token');
+console.log('redirect_uri',redirect_uri,'account_linking_token',account_linking_token);
+
+
+function processForm(e) {
+    if (e.preventDefault) e.preventDefault();
+
+    window.location.href = redirect_uri + "&authorization_code=ARRDAhIG0aW5OxoCOvC9ZZiO_gTWGDTxg0";
+
+    /* do what you want with the form */
+
+    // You must return false to prevent the default form behavior
+    return false;
+}
+
+var form = document.getElementById('auth');
+if (form.attachEvent) {
+    form.attachEvent("submit", processForm);
+} else {
+    form.addEventListener("submit", processForm);
+}
+
+
+
+</script>
+
+</body>
+</html> 
